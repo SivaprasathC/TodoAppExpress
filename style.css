@@ -73,3 +73,11 @@
     /* padding-right: 100px; */
     padding-top: 6px;
 }
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.edit{
+    margin-left: 20px;
+}
