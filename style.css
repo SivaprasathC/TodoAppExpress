@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Freeman;
+
+}
+.freeman-regular {
+    font-family: "Freeman", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+#header{
+    height: 90px;
+
+    text-align: center;
+    /* margin-top: 30px; */
+    background-color:rgb(14, 201, 138);
+    color: white;
+}
+
+#header h1{
+    padding:30px;
+}
+
+#create{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#input{
+
+    height: 50px;
+    width:350px;
+    border-radius: 10px;
+}
+#add{
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgb(14, 201, 138);
+    color: white; 
+}
+#todo{
+    margin-top: 20px;
+    text-align: center;
+}
+#todo h3{
+    margin-top: 10px;
+}
+#todolist{
+    margin-top:10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#todos{
+    margin-top: 20px;
+    background-color: rgb(208, 194, 194);
+    width: 400px;
+    height:fit-content;
+    left: auto;
+    right: auto;
+    border-radius: 20px;
+    font-size: 30px;
+}
+#todos p{
+    /* padding-right: 100px; */
+    padding-top: 6px;
+}
