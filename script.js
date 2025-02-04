@@ -23,11 +23,10 @@ fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
 function remove(id) {
     fetch('https://appsail-50024778614.development.catalystappsail.in/delete/' + id, {
         method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        mode: 'cors'  // Ensure the request mode is set to 'cors'
     })
-    .then(() => window.alert("Deleted successfully"))
-    .catch(error => console.error("Error:", error));
+    .then((function(){window.alert("Deleted successfully")
+                   location.reload(true)
+    }))
+    .catch(error => console.error("Error:", error)); 
+     
 }
