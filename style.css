@@ -30,17 +30,28 @@
 }
 
 #input{
-
+    font-size: 22px; 
     height: 50px;
     width:350px;
     border-radius: 10px;
 }
+#inputdate{
+    font-size: 16px; 
+    height: 50px;
+    width:150px;
+    border-radius: 10px;
+}
+#input::placeholder {
+    font-size: 20px; 
+}
+
 #add{
     height: 50px;
     width: 100px;
     border-radius: 20px;
     background-color: rgb(14, 201, 138);
     color: white; 
+    font-size: 22px;
 }
 #todo{
     margin-top: 20px;
@@ -80,4 +91,8 @@
 
 .edit{
     margin-left: 20px;
+}
+
+#operation h3{
+    margin-top: 15px;
 }

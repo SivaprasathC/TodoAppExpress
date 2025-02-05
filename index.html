@@ -15,8 +15,10 @@
         <h1>ToDo List</h1>
     </div>    
     <div id="create">
-        <input type="text" id="input" placeholder="Enter your task here">
-        <button id="add">Add</button>
+        <input type="text" id="input" placeholder="Enter Your Task and Deadline">
+        <input type="datetime-local" id="inputdate" placeholder="Enter the date">
+        <button id="add" onclick="create()">Add</button>
+        <div id="operation"></div>
     </div>
     <div id="todo">
         <h1>Tasks to be Completed</h1>
