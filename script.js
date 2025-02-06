@@ -6,6 +6,18 @@ fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
 .then(response=> response.json())
 .then(res=>{
     const data=res;
+
+    data.sort((a, b) => {
+        if (a.deadline === "No Deadline Given") return 1; 
+        if (b.deadline === "No Deadline Given") return -1;
+        
+        const dateA = new Date(a.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + a.deadline.split(" ")[1]);
+        const dateB = new Date(b.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + b.deadline.split(" ")[1]);
+        
+        return dateA - dateB;
+    });
+
+
     let todo='';
     data.forEach(list => {
        todo+=` <div id="todos">
