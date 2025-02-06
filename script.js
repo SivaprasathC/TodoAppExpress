@@ -35,14 +35,9 @@ function remove(id) {
      
 }
 
-
-function create(){
-
-    let todo=document.getElementById('input').value;
-    console.log(document.getElementById('inputdate').value);
+function getdate(){
     //todo example rcvd- 2025-02-11T00:35 to 11-02-2025 0:35
     let deadline=document.getElementById('inputdate').value;
-
     if (deadline==""){  //if no deadline is choosen
         var formatteddate=`No Deadline Given`;
     }
@@ -56,13 +51,17 @@ function create(){
         let year=datearray[0];
         var formatteddate =`${day}-${month}-${year} ${time}`;
     }
-    
+    return formatteddate;
+}
 
+function create(){
+
+    let todo=document.getElementById('input').value;
     if(todo.trim()!='')
     {
         let data={
             "todo":todo.trim(),
-            "deadline": formatteddate
+            "deadline": getdate()
         }
         fetch("https://appsail-50024778614.development.catalystappsail.in/create", {
             method: "POST",
@@ -110,7 +109,7 @@ function editsubmit(id){
          method: "PATCH",  
         headers: {    "Content-type": "application/json"  },  
         body: JSON.stringify({ "todo": document.getElementById('input').value,
-                            "deadline": document.getElementById('inputdate').value
+                            "deadline": getdate()
          })}) 
         .then((function()
          {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Edited Successfully &#9989;</h3>`
