@@ -96,9 +96,28 @@ function edit(id)
         }
     })})
     .catch(error => console.error("Error:", error)); 
-    document.getElementById('add').innerHTML='Edit'
     document.getElementById('create').innerHTML=`<input type="text" id="input" placeholder="Enter Your Task and Deadline">
         <input type="datetime-local" id="inputdate" placeholder="Enter the date">
-        <button id="add" onclick="editsubmit()">Add</button>
+        <button id="${id}" class="edit" onclick="editsubmit(this.id)">Edit</button>
         <div id="operation"></div>`
+}
+
+function editsubmit(id){
+
+    let fetchurl=`https://appsail-50024778614.development.catalystappsail.in${id}`
+    fetch(fetchurl,  
+     { 
+         method: "PATCH",  
+        headers: {    "Content-type": "application/json"  },  
+        body: JSON.stringify({ "todo": document.getElementById('input').value,
+                            "deadline": document.getElementById('inputdate').value
+         })}) 
+        .then((function()
+         {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Edited Successfully &#9989;</h3>`
+             setTimeout(() => {
+                 window.location.reload();
+             }, 950);
+         }))
+         .catch(error => console.error("Error:", error)); 
+    
 }
