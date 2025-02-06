@@ -96,5 +96,7 @@ function edit(id)
         }
     })})
     .catch(error => console.error("Error:", error)); 
+    document.getElementById('add').value='Edit'
+    document.getElementById('create').innerHTML=
 }
 
