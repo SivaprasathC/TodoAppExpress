@@ -99,6 +99,6 @@ function edit(id)
     document.getElementById('add').value='Edit'
     document.getElementById('create').innerHTML=`<input type="text" id="input" placeholder="Enter Your Task and Deadline">
         <input type="datetime-local" id="inputdate" placeholder="Enter the date">
-        <button id="add" onclick="edit()">Add</button>
+        <button id="add" onclick="editsubmit()">Add</button>
         <div id="operation"></div>`
 }
