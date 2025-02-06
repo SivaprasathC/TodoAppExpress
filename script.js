@@ -108,6 +108,7 @@ function edit(id)
     })})
     .catch(error => console.error("Error:", error)); 
     document.getElementById('create').innerHTML=`<input type="text" id="input" placeholder="Enter Your Task and Deadline">
+        <h3>Enter Deadline Below</h3>
         <input type="datetime-local" id="inputdate" placeholder="Enter the date">
         <button id="${id}" class="edit" onclick="editsubmit(this.id)">Edit</button>
         <div id="operation"></div>`
