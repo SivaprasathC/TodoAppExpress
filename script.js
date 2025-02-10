@@ -41,7 +41,7 @@ function remove(id) {
     {   document.getElementById('operation').innerHTML=`<h3 style="color: red;">Todo Deleted Successfully &#9989;</h3>`
         setTimeout(() => {
             window.location.reload();
-        }, 950);
+        }, 400);
     }))
     .catch(error => console.error("Error:", error)); 
      
@@ -86,7 +86,7 @@ function create(){
         {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Added Successfully &#9989;</h3>`
             setTimeout(() => {
                 window.location.reload();
-            }, 1350);
+            }, 400);
         }))
         .catch(error => console.error("Error:", error)); 
     }
@@ -130,7 +130,7 @@ function editsubmit(id){
          {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Edited Successfully &#9989;</h3>`
              setTimeout(() => {
                  window.location.reload();
-             }, 950);
+             }, 400);
          }))
          .catch(error => console.error("Error:", error)); 
     
