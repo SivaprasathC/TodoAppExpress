@@ -102,8 +102,10 @@ function edit(id)
     const data=res;
     data.forEach(list => {
         var result = id.replace("/update/", "")
-        if (list._id==result){
+        if (list._id==result)
+        {
             document.getElementById('input').value=list.todo;
+            document.getElementById('inputdate').value=list.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + list.deadline.split(" ")[1];
         }
     })})
     .catch(error => console.error("Error:", error)); 
