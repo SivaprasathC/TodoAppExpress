@@ -1,15 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Freeman;
+    font-family: Rokkitt;
+    font-weight:880;
 
 }
-.freeman-regular {
-    font-family: "Freeman", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
 
 #header{
     height: 90px;
@@ -66,7 +61,9 @@
     text-align: center;
 }
 #todo h3{
-    margin-top: 10px;
+    margin-top: 10px; 
+    font-style: italic;
+    font-weight: 500;
 }
 #todolist{
     margin-top:10px;
@@ -91,6 +88,7 @@
 #todos p{
     /* padding-right: 100px; */
     padding-top: 6px;
+    font-weight: 500;
 }
 #buttons{
     display: flex;
