@@ -10,7 +10,7 @@
 
     text-align: center;
     /* margin-top: 30px; */
-    background-color:rgb(14, 201, 138);
+    background-color:rgb(28, 199, 142);
     color: white;
 }
 
@@ -42,7 +42,7 @@
 #add{
     height: 50px;
     width: 100px;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: rgb(28, 170, 76);
     color: white; 
     font-size: 22px;
@@ -74,14 +74,16 @@
     align-items: center;
 }
 #todos{
-    margin-top: 20px;
-    background-color: rgb(208, 194, 194);
+    margin-top: 25px;
+    background-color: #F5F5F5;
     width: 400px;
     height:fit-content;
     left: auto;
     right: auto;
     border-radius: 20px;
     font-size: 30px;
+    border: 3px solid black;
+    padding: 10px;
 }
 #todos p{
     /* padding-right: 100px; */
