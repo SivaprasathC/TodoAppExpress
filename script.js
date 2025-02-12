@@ -1,7 +1,6 @@
 // text='<div id="todos"><p>hello</p></div>'
 // document.getElementById("todolist").innerHTML = text
-
-
+ 
 fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
 .then(response=> response.json())
 .then(res=>{
@@ -17,7 +16,7 @@ fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
         return dateA - dateB;
     });
 
-
+    
     let todo='';
     data.forEach(list => {
        todo+=` <div id="todos">
