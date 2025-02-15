@@ -85,6 +85,7 @@
     border: 1px solid black;
     border-bottom: 3px solid black;
     border-right: 3px solid black;
+    box-shadow: 3px 3px 5px #ccc;
     padding: 10px;
 }
 #todos p{
