@@ -75,14 +75,16 @@
 }
 #todos{
     margin-top: 25px;
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     width: 400px;
     height:fit-content;
     left: auto;
     right: auto;
     border-radius: 20px;
     font-size: 30px;
-    border: 3px solid black;
+    border: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
     padding: 10px;
 }
 #todos p{
