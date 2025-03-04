@@ -121,9 +121,9 @@
     font-size: 30px;
     border-radius: 30px;
     border: 3px solid rgb(247, 247, 247);
-    box-shadow: 3px 3px 5px #ccc;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 22px;
+    font-size: 15px;
     box-shadow: 5px 5px 5px 5px #ccc;
 }
 
@@ -131,8 +131,9 @@
     width: 300px;
     height: 35px;
     border-radius: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-left: 10px;
+    border-width: 2px;
     
 }
 #box-in{
@@ -143,17 +144,18 @@
     margin-bottom: 20px;
 }
 #box-in a{
-     text-decoration: none;
+     text-decoration: underline;
      color: rgb(14, 201, 138);
 }
 #register-login-btn{
     margin-bottom: 10px;
-    height: 35px;
-    width: 150px;
+    margin-top: 8px;
+    height: 36px;
+    width: 100px;
     border-radius: 20px;
     background-color: rgb(14, 201, 138);
     border-width: 0px;
     color: white;
-    font-size:medium;
+    font-size:20px;
 
 }

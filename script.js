@@ -1,7 +1,13 @@
 // text='<div id="todos"><p>hello</p></div>'
 // document.getElementById("todolist").innerHTML = text
- 
-fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
+let token=localStorage.getItem("token")
+console.log(token)
+
+if (token == null){
+    window.location.href="login.html"
+}
+let apiurl="https://appsail-50024778614.development.catalystappsail.in"
+fetch(`${apiurl}/todos`)
 .then(response=> response.json())
 .then(res=>{
     const data=res;
@@ -33,7 +39,7 @@ fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
 
 
 function remove(id) {
-    fetch('https://appsail-50024778614.development.catalystappsail.in/delete/' + id, {
+    fetch(`${apiurl}/delete/` + id, {
         method: 'DELETE',
     })
     .then((function()
@@ -74,7 +80,7 @@ function create(){
             "todo":todo.trim(),
             "deadline": getdate()
         }
-        fetch("https://appsail-50024778614.development.catalystappsail.in/create", {
+        fetch("${apiurl}/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -95,7 +101,7 @@ function create(){
 
 function edit(id)
 {    
-    fetch("https://appsail-50024778614.development.catalystappsail.in/todos")
+    fetch(`${apiurl}/todos`)
     .then(response=> response.json())
     .then(res=>{
     const data=res;
@@ -117,7 +123,7 @@ function edit(id)
 
 function editsubmit(id){
 
-    let fetchurl=`https://appsail-50024778614.development.catalystappsail.in${id}`
+    let fetchurl=`${apiurl}${id}`
     fetch(fetchurl,  
      { 
          method: "PATCH",  
