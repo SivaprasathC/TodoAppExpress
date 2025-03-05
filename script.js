@@ -78,18 +78,18 @@ function create(){
     let todo=document.getElementById('input').value;
     if(todo.trim()!='')
     {
-        let data={
+        var data=JSON.stringify({
             "todo":todo.trim(),
             "deadline": getdate(),
             "jwttoken":token,
 
-        }
+        })
         fetch(`${apiurl}/create`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body:JSON.stringify(data), //covert to json string
+            body:(data), //covert to json string
         })
         .then((function()
         {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Added Successfully &#9989;</h3>`
