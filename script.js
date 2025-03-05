@@ -84,7 +84,7 @@ function create(){
             "jwttoken":token,
 
         }
-        fetch("${apiurl}/create", {
+        fetch(`${apiurl}/create`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
