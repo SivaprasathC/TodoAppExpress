@@ -129,11 +129,12 @@ function edit(id)
 {    
     fetch(`${apiurl}/todos`,
         {
-            method:"GET",
-            headers:{
-            ContentType:"Application/json",
-            Authorization: token
-        }})
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        })
     .then(response=> response.json())
     .then(res=>{
     const data=res;
@@ -146,10 +147,10 @@ function edit(id)
         }
     })})
     .catch(error => console.error("Error:", error)); 
-    document.getElementById('create').innerHTML=`<input type="text" id="input" placeholder="Enter Your Task and Deadline">
+    document.getElementById('create').innerHTML=`<input type="text" id="input" placeholder="Enter Your Task">
         <h3>Enter Deadline Below</h3>
         <input type="datetime-local" id="inputdate" placeholder="Enter the date">
-        <button id="${id}" class="edit" onclick="editsubmit(this.id)">Edit</button>
+        <button id="${id}" class="edit" onclick="editsubmit(this.id)" style="background-color: rgb(28, 170, 76)">Edit</button>
         <div id="operation"></div>`
 }
 
