@@ -5,18 +5,50 @@
 
 }
 
-#header{
+/* #header{
     height: 90px;
 
     text-align: center;
-    /* margin-top: 30px; */
     background-color:rgb(28, 199, 142);
     color: white;
 }
 
 #header h1{
     padding:30px;
+} */
+#header {
+    height: 90px;
+    text-align: center;
+    background-color: rgb(28, 199, 142);
+    color: white;
+    position: relative; /* Allows absolute positioning inside */
 }
+
+#header h1 {
+    padding: 30px;
+}
+
+
+#logout {
+    position: absolute;
+    top: 23px;
+    right: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#logout img {
+    width: 50px; 
+    height: 50px;
+    transition: 0.3s;
+}
+
+#logout img:hover {
+    transform: scale(1.1); 
+}
+
+
 
 #create{
     text-align: center;

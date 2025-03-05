@@ -7,6 +7,11 @@ let token=localStorage.getItem("token")
 if (token == null){
     window.location.href="login.html"
 }
+function logout() {
+    localStorage.removeItem("token"); 
+    window.location.href = "login.html";
+}
+
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
 
 fetch(`${apiurl}/todos`, {
