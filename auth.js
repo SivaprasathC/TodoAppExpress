@@ -32,7 +32,7 @@ function login(){
          .then(res=>{
              const data=res;
              if(data.message=="Success"){
-                localStorage.setItem("token",data.token);
+                 localStorage.setItem("token",data.token);
                  window.location.href="index.html"
          }})
 }
