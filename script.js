@@ -2,41 +2,58 @@
 // document.getElementById("todolist").innerHTML = text
 
 let token=localStorage.getItem("token")
-
+// localStorage.removeItem("token")
 
 if (token == null){
     window.location.href="login.html"
 }
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
-fetch(`${apiurl}/todos`)
+
+fetch(`${apiurl}/todos`, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    }
+})
+
 .then(response=> response.json())
 .then(res=>{
     const data=res;
-    
+    console.log(data)
+    if (data==""){
+        document.getElementById('todolist').innerHTML=`<h3 style="color: red;margin-top:40px">No Todos Added Yet &#128533;</h3><h3 style="color: green;">Start By Adding Your First ToDo! &#128519;</h3>`
+    }
 
-    data.sort((a, b) => {
-        if (a.deadline === "No Deadline Given") return 1; 
-        if (b.deadline === "No Deadline Given") return -1;
-        
-        const dateA = new Date(a.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + a.deadline.split(" ")[1]);
-        const dateB = new Date(b.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + b.deadline.split(" ")[1]);
-        
-        return dateA - dateB;
-    });
+    else{
 
+        data.sort((a, b) => {
+            if (a.deadline === "No Deadline Given") return 1; 
+            if (b.deadline === "No Deadline Given") return -1;
+            
+            const dateA = new Date(a.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + a.deadline.split(" ")[1]);
+            const dateB = new Date(b.deadline.split(" ")[0].split("-").reverse().join("-") + "T" + b.deadline.split(" ")[1]);
+            
+            return dateA - dateB;
+        });
     
-    let todo='';
-    data.forEach(list => {
-       todo+=` <div id="todos">
-                <p>${list.todo}</p>
-                <h5 style="color: red;">Deadline: ${list.deadline}</h5>
-                <div id="buttons">
-                    <button style="height:40px;width:100px;border-radius: 30px;background-color: red;color: azure;font-size: large;padding-bottom:6px" id="${list._id} "  onclick="remove(this.id)">Delete</button>
-                    <button style="height:40px;width:100px;border-radius: 30px;background-color: rgb(28, 170, 76);color: azure;font-size: large;padding-bottom:6px" id="/update/${list._id}" class="edit" onclick="edit(this.id)">Edit</button>
-                </div>
-            </div>`
-    })
-    document.getElementById('todolist').innerHTML=todo;
+        
+        let todo='';
+        data.forEach(list => {
+           todo+=` <div id="todos">
+                    <p>${list.todo}</p>
+                    <h5 style="color: red;">Deadline: ${list.deadline}</h5>
+                    <div id="buttons">
+                        <button style="height:40px;width:100px;border-radius: 30px;background-color: red;color: azure;font-size: large;padding-bottom:6px" id="${list._id} "  onclick="remove(this.id)">Delete</button>
+                        <button style="height:40px;width:100px;border-radius: 30px;background-color: rgb(28, 170, 76);color: azure;font-size: large;padding-bottom:6px" id="/update/${list._id}" class="edit" onclick="edit(this.id)">Edit</button>
+                    </div>
+                </div>`
+        })
+        document.getElementById('todolist').innerHTML=todo;
+
+    }
+
+
 })
 
 
@@ -95,7 +112,7 @@ function create(){
         {   document.getElementById('operation').innerHTML=`<h3 style="color: green;">Todo Added Successfully &#9989;</h3>`
             setTimeout(() => {
                 window.location.reload();
-            }, 2000);
+            }, 400);
         }))
         .catch(error => console.error("Error:", error)); 
     }
@@ -105,7 +122,13 @@ function create(){
 
 function edit(id)
 {    
-    fetch(`${apiurl}/todos`)
+    fetch(`${apiurl}/todos`,
+        {
+            method:"GET",
+            headers:{
+            ContentType:"Application/json",
+            Authorization: token
+        }})
     .then(response=> response.json())
     .then(res=>{
     const data=res;
