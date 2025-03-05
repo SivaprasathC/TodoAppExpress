@@ -1,7 +1,8 @@
 // text='<div id="todos"><p>hello</p></div>'
 // document.getElementById("todolist").innerHTML = text
+
 let token=localStorage.getItem("token")
-console.log(token)
+
 
 if (token == null){
     window.location.href="login.html"
@@ -11,6 +12,7 @@ fetch(`${apiurl}/todos`)
 .then(response=> response.json())
 .then(res=>{
     const data=res;
+    
 
     data.sort((a, b) => {
         if (a.deadline === "No Deadline Given") return 1; 
@@ -78,7 +80,9 @@ function create(){
     {
         let data={
             "todo":todo.trim(),
-            "deadline": getdate()
+            "deadline": getdate(),
+            "jwttoken":token,
+
         }
         fetch("${apiurl}/create", {
             method: "POST",
