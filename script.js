@@ -10,6 +10,9 @@ if (token == null){
 function logout() {
     localStorage.removeItem("token"); 
     window.location.href = "login.html";
+    function preventBack(){window.history.forward();}
+     setTimeout("preventBack()", 0);
+      window.onunload=function(){null};
 }
 
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
