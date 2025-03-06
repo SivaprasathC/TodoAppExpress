@@ -8,7 +8,14 @@ if (token == null){
     window.location.href="login.html"
 }
 function logout() {
-    localStorage.removeItem("token"); 
+    localStorage.removeItem("token");
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () {
+        null
+    };
     window.location.href = "login.html";
     
 }
