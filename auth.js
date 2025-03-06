@@ -17,7 +17,10 @@ function register(){
              if(data.message=="Success"){
                 console.log("Success")
                  window.location.href="index.html"
-         }})
+         }
+        else{
+            document.getElementById('authstatus-reg').innerHTML=`<h3 style="color: red;">${data.err}</h3>`
+        }})
 }
 
 function login(){
@@ -34,5 +37,10 @@ function login(){
              if(data.message=="Success"){
                  localStorage.setItem("token",data.token);
                  window.location.href="index.html"
-         }})
+             }
+             else{
+                  document.getElementById('authstatus').innerHTML='<h3 style="color: red;">Invalid Email or Password!</h3>'
+             }
+        
+        })
 }
