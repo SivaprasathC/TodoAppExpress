@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://db.onlinewebfonts.com/c/be167b60b37c7f9cd47a1b0fdb248cf5?family=Arboria-Bold" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/1c7f14203d028f1c6f8914508f469cb9?family=Arboria-Book" rel="stylesheet">
-    
+    <script>
+    function preventBack() {
+        window.history.forward();
+    }
+
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
+    </script>
 </head>
 <body>
     <div id="header">
