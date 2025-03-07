@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "12861000000008001",
+      "name": "todocrud",
+      "domain": {
+        "id": "50024778614",
+        "name": "todocrud-60037061521.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60037061521",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
