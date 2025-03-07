@@ -2,7 +2,7 @@ document.getElementById("aftercode").style.display = "none";
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
 
 function getcode(){
-
+     document.getElementById("getcode").disabled= true;
      const mail=document.getElementById('mail').value;
      fetch(`${apiurl}/reset-pass`, {
         method: "POST",
@@ -20,9 +20,11 @@ function getcode(){
         }
         else if(data.message=="Error"){
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">Error In Sending Mail</h3>`
+             location.reload();
         }
         else{
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">User Not Found</h3>`
+             location.reload();
         }
     })
 }
