@@ -20,11 +20,16 @@ function getcode(){
         }
         else if(data.message=="Error"){
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">Error In Sending Mail</h3>`
-             location.reload();
+             setTimeout(() => {
+                location.reload();
+            }, 1000);
         }
         else{
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">User Not Found</h3>`
-             location.reload();
+             setTimeout(() => {
+                location.reload();
+            }, 1000);
+             
         }
     })
 }
