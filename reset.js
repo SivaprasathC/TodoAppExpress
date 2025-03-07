@@ -1,4 +1,4 @@
-document.getElementById("aftercode").style.display = "none";
+//document.getElementById("aftercode").style.display = "none";
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
 
 function getcode(){
