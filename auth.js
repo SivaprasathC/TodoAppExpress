@@ -1,3 +1,5 @@
+//need to set expiry time for jwt token and chheck while entering the page
+
 let apiurl="https://appsail-50024778614.development.catalystappsail.in"
 
 function register(){
