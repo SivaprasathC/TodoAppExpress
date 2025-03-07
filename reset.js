@@ -26,6 +26,35 @@ function getcode(){
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">User Not Found</h3>`
         }
     })
+}
 
+function resetpass(){
+    
+    const code=document.getElementById('code').value;
+    const password=document.getElementById('password').value;
+    fetch(`${apiurl}/reset-pass/code`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({"password": password})
+    })
+    .then(response=> response.json())
+    .then(res=>{
+        const data=res;
+        console.log(data.message)
+        if(data.message=="Invalid or Expired Token"){
+            document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">${data.message}</h3>`
+        }
+        else if(data.message=="Password Reset Success"){
+            document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: green;">Password Reset Successfully!</h3>`
+            setTimeout(() => {
+                window.location.href="login.html";
+            }, 400);
+        }
+        else{
+            document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">Something Went Wrong</h3>`
+        }
+    })
 
 }
