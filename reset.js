@@ -14,7 +14,6 @@ function getcode(){
     .then(response=> response.json())
     .then(res=>{
         const data=res;
-        console.log(data.message)
         if(data.message=="Success"){
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: green;">Code Sent Successfully!</h3>`
             document.getElementById("aftercode").style.display = "block";
@@ -31,7 +30,6 @@ function getcode(){
 function resetpass(){
     
     const code=document.getElementById('code').value;
-    console.log(code)
     const password=document.getElementById('password').value;
     fetch(`${apiurl}/reset-pass/${code}`, {
         method: "POST",
