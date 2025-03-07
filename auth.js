@@ -8,7 +8,6 @@ function register(){
          method: "POST",  
         headers: {    "Content-type": "application/json"  },  
         body: JSON.stringify({ "name": document.getElementById('name').value,
-                               "username": document.getElementById('username').value,
                                "number": document.getElementById('phone').value,
                                "mail": document.getElementById('mail').value,
                                "password": document.getElementById('password').value,
