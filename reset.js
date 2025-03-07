@@ -49,7 +49,7 @@ function resetpass(){
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: green;">Password Reset Successfully!</h3>`
             setTimeout(() => {
                 window.location.href="login.html";
-            }, 400);
+            }, 1200);
         }
         else{
             document.getElementById('authstatus-reset').innerHTML=`<h3 style="color: red;">Something Went Wrong</h3>`
