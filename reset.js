@@ -31,13 +31,14 @@ function getcode(){
 function resetpass(){
     
     const code=document.getElementById('code').value;
+    console.log(code)
     const password=document.getElementById('password').value;
-    fetch(`${apiurl}/reset-pass/code`, {
+    fetch(`${apiurl}/reset-pass/${code}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({"password": password})
+        body: JSON.stringify({"password":password})
     })
     .then(response=> response.json())
     .then(res=>{
